@@ -152,6 +152,14 @@ ensemble; treat `cnn.py`'s holdout predictions as a weak baseline.
   optimistic. A nested split (train / early-stop-val / test) would remove this.
 - **Small validation sets:** ~97 images per fold, so one image ≈ 1 point.
 - **Holdout sets are unlabeled.** No accuracy can be computed on them.
+- **Possible processing-artifact shortcut.** Out-of-fold accuracy on Alex's
+  RGBA PNGs is 95.5% (178 imgs) vs. 66.7% on Alex's palette PNGs (78 imgs,
+  ≤256 colors) and 78.2% on Kelly (all RGB). No image has real transparency,
+  so RGB conversion is lossless. Still, the model may be partly recognizing how
+  Alex's files were processed. Holdout Set 2 is ~all RGBA and Holdout Set 1 ~all
+  RGB. See `TASKS.md` for the planned robustness check.
+- **Holdout Set 2 count mismatch:** the project PDF says 24 images; our
+  `Data/HoldoutSet02/` has 46 (`TestSet03-*`). Confirm with the instructor.
 
 ## Gotchas learned the hard way
 
