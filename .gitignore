@@ -1,0 +1,13 @@
+# Data files:
+Data/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Trained model weights (large; regenerate by running the scripts)
+*.keras
+
+# macOS
+.DS_Store
